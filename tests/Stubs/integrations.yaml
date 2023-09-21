@@ -1,0 +1,14 @@
+integrations:
+  github:
+    url: 'https://api.github.com/'
+    auth:
+      type: Bearer
+      value: !env 'GITHUB_TOKEN'
+      name: 'Authorization'
+
+  treblle:
+    url: 'https://api.treblle.com'
+    auth:
+      type: Header
+      value: !env 'TREBLLE_TOKEN'
+      name: 'X-API-KEY'

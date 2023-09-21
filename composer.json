@@ -1,0 +1,68 @@
+{
+  "name": "treblle/laravel-api-manager",
+  "description": "description",
+  "minimum-stability": "stable",
+  "prefer-stable": true,
+  "license": "MIT",
+  "authors": [
+    {
+      "role": "Developer",
+      "name": "Steve McDougall",
+      "email": "juststevemcd@gmail.com",
+      "homepage": "https://www.juststeveking.uk/"
+    }
+  ],
+  "require": {
+    "php": "^8.2",
+    "symfony/yaml": "^6.3"
+  },
+  "require-dev": {
+    "laravel/pint": "^1.13",
+    "orchestra/testbench": "^8.11",
+    "pestphp/pest": "^2.19",
+    "pestphp/pest-plugin-type-coverage": "^2.2",
+    "roave/security-advisories": "dev-latest"
+  },
+  "autoload": {
+    "psr-4": {
+      "Treblle\\ApiManager\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "sort-packages": true,
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  },
+  "scripts": {
+    "dump": [
+      "composer dump-autoload --optimize --classmap-authoritative --strict-psr"
+    ],
+    "pint": [
+      "./vendor/bin/pint"
+    ],
+    "stan": [
+      "./vendor/bin/phpstan analyse --memory-limit=3g"
+    ],
+    "test": [
+      "./vendor/bin/pest"
+    ],
+    "types": [
+      "./vendor/bin/pest --type-coverage"
+    ]
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Treblle\\ApiManager\\Providers\\PackageServiceProvider"
+      ]
+    }
+  }
+}
